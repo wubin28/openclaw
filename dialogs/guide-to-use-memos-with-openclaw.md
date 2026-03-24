@@ -92,27 +92,12 @@ MEMOS_API_KEY=mpg-你的key
 
 ### 第 3 步：安装插件
 
-**⚠️ 修正说明（对比原指南）**：原指南的安装命令如下：
+#### 方案 A — 通过openclaw命令安装（推荐）
 
 ```sh
-# ❌ 此命令不存在！
 openclaw plugins install @memtensor/memos-cloud-openclaw-plugin@latest
+openclaw gateway restart
 ```
-
-**`openclaw plugins install` 是错误的命令。** 经核查源码（`src/auto-reply/reply/commands-plugins.ts`），插件安装通过 **向 agent 发送消息** 来完成，而不是通过终端 CLI。
-
-#### 方案 A — 通过对话安装（推荐）
-
-打开 OpenClaw 应用或任意与你的 agent 聊天的界面，发送以下消息：
-
-```
-/plugins install @memtensor/memos-cloud-openclaw-plugin@latest
-```
-
-OpenClaw agent 会自动处理下载、安装并更新 `~/.openclaw/openclaw.json`。
-
-安装完成后，重启 gateway：
-- **Mac mini**：在 OpenClaw Mac 应用菜单中选择"重启 Gateway"，或关闭并重新打开 Mac 应用。
 
 ---
 
